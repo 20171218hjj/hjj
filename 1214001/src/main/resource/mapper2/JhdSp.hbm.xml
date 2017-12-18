@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+		<!DOCTYPE hibernate-mapping PUBLIC
+			"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+			"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+		<hibernate-mapping>
+			<class name="hjj.domain2.JhdSp" table="JDH_SP_T_">
+				<id name="id" column="ID">
+					<generator class="sequence">
+						<param name="sequence_name">DEPT_EMP</param>
+					</generator>
+				</id>
+				<property name="djbh" column="DJBH" insert="false" update="false" ></property>
+				<property name="spbh" column="SPBH"  insert="false" update="false"></property>
+				<property name="sl" column="SL"></property>
+				
+				<many-to-one name="jhd" class="hjj.domain2.Jhd" column="DJBH" cascade="all"></many-to-one>
+				<many-to-one name="sp" class="hjj.domain2.Sp" column="SPBH" cascade="all"></many-to-one>
+			</class>
+		</hibernate-mapping>

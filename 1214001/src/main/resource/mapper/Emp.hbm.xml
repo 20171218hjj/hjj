@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+		<!DOCTYPE hibernate-mapping PUBLIC
+			"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+			"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+		<hibernate-mapping>
+			<class name="hjj.domian.Emp" table="T_EMP">
+				<id name="eno" column="ENO">
+					<generator class="sequence">
+						<param name="sequence_name">DEPT_EMP</param>
+					</generator>
+				</id>
+				<property name="ename" column="ENAME"></property>
+				<property name="dno" column="DNO" insert="false" update="false"></property>
+				<property name="job" column="JOB"></property>	
+				<many-to-one name="dept" class="hjj.domian.Dept" column="DNO" >
+				</many-to-one>	
+			</class>
+		</hibernate-mapping>

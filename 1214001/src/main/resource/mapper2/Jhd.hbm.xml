@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+		<!DOCTYPE hibernate-mapping PUBLIC
+			"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+			"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+		<hibernate-mapping>
+			<class name="hjj.domain2.Jhd" table="JHD_T">
+				<id name="djbh" column="DJBH">
+					<generator class="sequence">
+						<param name="sequence_name">DEPT_EMP</param>
+					</generator>
+				</id>
+				<property name="zj" column="ZJ"></property>
+				<set name="js" inverse="true">
+					<key column="DJBH"></key>
+					<one-to-many class="hjj.domain2.JhdSp" />
+				</set>
+				</class>
+		</hibernate-mapping>
